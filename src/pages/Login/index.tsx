@@ -8,7 +8,6 @@ function Login() {
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-
     try {
       const response = await fetch("http://localhost:5000/api/users/login", {
         method: "POST",
@@ -24,7 +23,11 @@ function Login() {
       if (!response.ok) {
         setMessage(data.message);
       }
-      navigate("/home");
+      console.log(data);
+      localStorage.setItem("userId", JSON.stringify(data._id));
+      localStorage.setItem("name", JSON.stringify(data.name));
+      localStorage.setItem("email", JSON.stringify(data.email));
+      navigate("/articles");
     } catch (error: any) {
       setMessage("Error: " + error.response.data.message);
     }
