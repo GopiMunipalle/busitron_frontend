@@ -4,15 +4,17 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Articles from "./pages/Articles";
 import Dashboard from "./pages/Dashboard";
+import FileUpload from "./pages/Docs";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Register />} />
+        <Route path="/docs" element={<FileUpload />} />
+        {/* <Route path="/" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/articles" element={<Articles />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard" element={<Dashboard />} /> */}
       </Routes>
     </BrowserRouter>
   );
